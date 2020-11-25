@@ -1,0 +1,59 @@
+header {
+  height: 40vh;
+  background: url("../img/hero-bluebak-1200x450.jpg") no-repeat top center/cover;
+  color: color(c-white);
+  padding: 5rem 1rem;
+  text-align: center;
+  h1 {
+    font-size: 3rem;
+    padding: .9em 0;
+  }
+  h2 {
+    font-size: 1.7rem;
+    padding-bottom: 1.8em;
+  }
+}
+
+@include mq-desktop {
+  header {
+    padding-bottom: 8em;
+    padding-left: 3em;
+    padding-right: 3em;
+
+    h1 {
+      font-size: 5rem;
+      padding-top: 2em;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+    }
+  }
+}
+
+button {
+  font-size: 1.2rem;
+  display: inline;
+  padding: .8rem 3rem;
+  background-color: color(c-violet);
+  text-transform: uppercase;
+  line-height: 1.1;
+  border-radius: .4em;
+  transition: .2s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background-color: color(c-blue2);
+    color: color(c-violet);
+  }
+  a:link, a:visited {
+    color: color(c-white);
+    text-decoration: none;
+  }
+}
+.btn-alt {
+  background-color: transparent;
+  border: 1px solid color(c-blue2);
+  &:hover {
+    border: 1px solid color(c-blue1);
+  }
+}

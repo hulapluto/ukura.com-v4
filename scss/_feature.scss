@@ -1,0 +1,68 @@
+
+.feature {
+  background: border-box;
+  margin: 0 auto;
+  max-width: 1200px;
+  
+  figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15em;
+    width: 100%;
+    overflow: hidden;
+
+    @include mq-tablet {
+      height: 20em;
+    }
+  }
+
+  &::after {
+    padding-bottom: 3em;
+  }
+
+  @include mq-desktop {
+    display: flex;
+    flex-direction: row;
+
+    figure {
+      flex: 1 0 45%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      box-sizing: border-box;
+    }
+  }
+
+  .feature_item {
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+
+    a {
+      color: color(c-blue2);
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 1.5em;
+  }
+
+    li::before {
+      content: "• ";
+      color: color(c-violet);
+      padding-right: .4rem;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: color(c-violet);
+    }
+  }

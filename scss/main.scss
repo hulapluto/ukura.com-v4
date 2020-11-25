@@ -1,0 +1,91 @@
+//needs to be declared first
+$colors: (
+  "c-blue1": #010059,
+  "c-blue2": #207dff,
+  "c-blue3": #b2d2ff,
+  "c-violet": #8d309b,
+  "c-gold": #ffa900,
+  "c-light": #9999b5,
+  "c-white": #ffffff,
+  "c-dark": #333333,
+  "c-black": #000000,
+);
+//function afterwards
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+} 
+
+$tablet: 767px;
+$tablet2: 1023px;
+$desktop: 1024px;
+$desktop-large: 1920px;
+@mixin mq-large {
+  @media screen and (min-width: $desktop-large) {
+    @content;
+  }
+}
+@mixin mq-desktop {
+  @media screen and (min-width: $desktop) {
+    @content;
+  }
+}
+@mixin mq-tablet {
+  @media screen and (min-width: $tablet) and (max-width: $tablet2) {
+    @content;
+  }
+}
+
+@import "grid";
+@import "header";
+@import "nav";
+@import "section";
+@import "card";
+@import "feature";
+@import "project";
+
+
+* {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+body {
+  margin: 0px;
+  max-width: 1920px;
+
+  @include mq-large {
+    margin: 0 auto;
+    background-color: color(c-blue3);
+  }
+}
+
+h1, h2, h3, h4, h5, nav { 
+  font-family: 'Josefin Sans', sans-serif; 
+}
+
+//anchor offset
+:target {
+  display: block;
+  position: relative;
+  top: -120px; 
+  visibility: hidden;
+}
+
+// helpers
+.mg-r1 {
+  margin-right: 1rem;
+}
+
+.full {
+  max-width: 100%;
+  display: block;
+}
