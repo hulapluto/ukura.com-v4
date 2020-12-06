@@ -163,9 +163,12 @@ section {
   button {
     padding: .8rem 2rem;
 
-    &:first-of-type {
-      margin-right: 2em;
+    @include mq-desktop {
+      &:first-of-type {
+        margin-right: 2em;
+      }
     }
+    
   }
 }
 
